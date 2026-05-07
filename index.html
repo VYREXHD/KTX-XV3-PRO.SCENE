@@ -11,6 +11,7 @@
             --card-bg: #0d0d0d;
             --text: #ffffff;
             --border: #1a1a1a;
+            --accent: #ff4500;
         }
 
         body {
@@ -20,34 +21,34 @@
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
-        /* Clean Header */
         header {
-            height: 50vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid var(--border);
             background: radial-gradient(circle at center, #111 0%, #000 100%);
+            border-bottom: 1px solid var(--border);
         }
 
         .logo-text {
-            font-size: 5rem;
+            font-size: clamp(3rem, 10vw, 6rem);
             font-weight: 900;
-            letter-spacing: -3px;
+            letter-spacing: -4px;
             margin: 0;
             text-transform: uppercase;
         }
 
         .nav-bar {
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
-            padding: 20px;
+            padding: 15px;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
@@ -57,28 +58,27 @@
         .nav-bar a {
             color: #666;
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
         .nav-bar a:hover { color: var(--primary); }
 
         .container {
-            max-width: 1000px;
-            margin: 60px auto;
+            max-width: 900px;
+            margin: 80px auto;
             padding: 0 20px;
         }
 
-        /* Table Styling */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 4px;
-            padding: 0;
             overflow: hidden;
+            margin-bottom: 50px;
         }
 
         table {
@@ -90,10 +90,9 @@
             background: #050505;
             padding: 20px;
             text-align: left;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #444;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         td {
@@ -108,22 +107,30 @@
         .btn-main {
             background: var(--primary);
             color: white;
-            padding: 15px 40px;
+            padding: 18px 45px;
             text-decoration: none;
             font-weight: 900;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin-top: 30px;
             letter-spacing: 1px;
+            transition: transform 0.2s;
         }
+
+        .btn-main:hover { transform: scale(1.05); }
+
+        h2 { font-size: 0.75rem; color: #444; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; }
+        
+        .rule-item { padding: 15px; border-bottom: 1px solid var(--border); font-size: 0.85rem; color: #bbb; }
+        .rule-item span { color: var(--primary); font-weight: bold; margin-right: 10px; }
     </style>
 </head>
 <body>
 
     <header>
         <h1 class="logo-text">KTX<span style="color:var(--primary)">.</span></h1>
-        <p style="color: #444; font-weight: bold; letter-spacing: 3px;">PRO SCENE HUB</p>
-        <a href="#" class="btn-main">Enter Discord</a>
+        <p style="color: #444; font-weight: bold; letter-spacing: 5px; margin-top: 10px;">PRO SCENE HUB</p>
+        <a href="YOUR_DISCORD_LINK_HERE" class="btn-main" target="_blank">Enter Discord</a>
     </header>
 
     <div class="nav-bar">
@@ -133,7 +140,7 @@
     </div>
 
     <div class="container" id="leaderboard">
-        <h2 style="font-size: 0.8rem; color: #444; text-transform: uppercase; margin-bottom: 20px;">Top Contenders</h2>
+        <h2>Top Contenders</h2>
         <div class="card">
             <table>
                 <thead>
@@ -153,7 +160,7 @@
                     </tr>
                     <tr>
                         <td class="rank">02</td>
-                        <td>CONTENDER_02</td>
+                        <td>PLAYER_2</td>
                         <td>2450</td>
                         <td style="color: #333; font-size: 0.7rem;">OFFLINE</td>
                     </tr>
@@ -161,6 +168,25 @@
             </table>
         </div>
     </div>
+
+    <div class="container" id="rules">
+        <h2>Tournament Ruleset</h2>
+        <div class="card">
+            <div class="rule-item"><span>01</span> No game-breaking exploits or glitches allowed.</div>
+            <div class="rule-item"><span>02</span> Matches must be reported via Discord within 10 mins.</div>
+            <div class="rule-item"><span>03</span> Toxicity results in immediate ELO deduction.</div>
+            <div class="rule-item"><span>04</span> Connection issues over 150ms must be re-tested.</div>
+        </div>
+    </div>
+
+    <div class="container" id="info">
+        <h2>About KTX</h2>
+        <p style="color: #666; font-size: 0.9rem;">KTX is a premier competitive community for Dragon Ball Xenoverse. We focus on low-latency competitive play and high-stakes rankings.</p>
+    </div>
+
+    <footer style="padding: 50px; text-align: center; color: #222; font-size: 0.6rem; letter-spacing: 2px;">
+        © 2026 KINETIX PRO SCENE
+    </footer>
 
 </body>
 </html>
